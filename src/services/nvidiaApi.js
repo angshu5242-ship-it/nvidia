@@ -1,15 +1,26 @@
 // NVIDIA API Service for Video and Image Generation
-// Using OpenAI-compatible endpoints via Vite proxy to avoid CORS issues
+// Uses Vite proxy in development (/api) and Vercel Edge Function in production (/api/nvidia)
 
-const API_BASE_URL = '/api';
+const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+const API_BASE_URL = isProduction ? '/api/nvidia' : '/api';
+
+// Note: In production, API_KEY is used by the Vercel Edge Function (api/nvidia.js)
+// In development, Vite proxy forwards the Authorization header automatically
 const API_KEY = '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';
 
 // Default headers for all requests
-const getHeaders = () => ({
-  'Authorization': `Bearer ${API_KEY}`,
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-});
+const getHeaders = () => {
+  const headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+  };
+  // Only add Authorization in development (Vite proxy handles it)
+  // In production, the Vercel Edge Function adds it server-side
+  if (!isProduction) {
+    headers['Authorization'] = `Bearer ${API_KEY}`;
+  }
+  return headers;
+};
 
 // Handle API responses
 const handleResponse = async (response) => {
