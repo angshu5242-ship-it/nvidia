@@ -1,4 +1,4 @@
-import { GitFork, MessageSquare, Users, Sparkles, Video, Image, Layers, Heart } from 'lucide-react';
+import { GitFork, MessageSquare, Users, Sparkles, Video, Image, Layers, Heart, Scissors } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,6 +8,7 @@ const Footer = () => {
       { label: 'Thumbnail Generator', href: '#thumbnail' },
       { label: 'Hindi Kahani Videos', href: '#hindi-kahani' },
       { label: 'Video Types', href: '#video-types' },
+      { label: 'Clip Extractor', href: '#clip-extractor' },
       { label: 'API Documentation', href: 'https://docs.nvidia.com/nim/visual-genai/latest/' },
     ],
     resources: [

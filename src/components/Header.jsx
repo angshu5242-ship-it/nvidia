@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Sparkles, Video, Image, Layers } from 'lucide-react';
+import { Menu, X, Sun, Moon, Sparkles, Video, Image, Layers, Scissors } from 'lucide-react';
 
 const Header = () => {
   const [isDark, setIsDark] = useState(false);
@@ -31,6 +31,7 @@ const Header = () => {
     { href: '#thumbnail', label: 'Thumbnails' },
     { href: '#hindi-kahani', label: 'Hindi Kahani' },
     { href: '#video-types', label: 'Video Types' },
+    { href: '#clip-extractor', label: 'Clip Extractor' },
     { href: '#features', label: 'Features' },
   ];
 

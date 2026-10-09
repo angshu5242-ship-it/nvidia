@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import ThumbnailGenerator from './components/ThumbnailGenerator';
 import HindiKahaniGenerator from './components/HindiKahaniGenerator';
 import VideoTypesGenerator from './components/VideoTypesGenerator';
+import VideoClipExtractor from './components/VideoClipExtractor';
 import Features from './components/Features';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <ThumbnailGenerator />
           <HindiKahaniGenerator />
           <VideoTypesGenerator />
+          <VideoClipExtractor />
           <Features />
         </main>
         <Footer />
